@@ -1,8 +1,10 @@
 <h1>AjaxApp</h1>
 <%= form_with url: "/posts", method: :post,id: "form" do |form| %> <%#ポストコントローラーに   %>
-  <%= form.text_field :content %>
+  <%= form.text_field :content, id: "content"%>   <%#取得したいのでidを設定 %>
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
+
+<div id="list"><%# 投稿後にメモを追加する要素 %></div>
 
 <% @posts.each do |post| %>
 <div class="post" data-id=<%=post.id%> data-check=<%=post.checked%> ><%#JavaScriptで使用したい情報はHTMLに記載 %>
