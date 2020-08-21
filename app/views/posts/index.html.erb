@@ -5,8 +5,9 @@
 <% end %>
 
 <% @posts.each do |post| %>
-<div class="post">
-  <div class="post-date">
+<div class="post" data-id=<%=post.id%> data-check=<%=post.checked%> ><%#JavaScriptで使用したい情報はHTMLに記載 %>
+<%# div[data-check="true"] {background: #585555d0;} CSSに記載している%>
+  <div class="post-date" >
     投稿日時：<%= post.created_at %>
   </div>
   <div class="post-content">
